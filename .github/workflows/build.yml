@@ -10,7 +10,7 @@
       steps:
         - uses: actions/checkout@v3
         - name: Build Image
-          run: docker build. --file Dockerfile -t Risingstar16/pract12:latest
+          run: docker build . --file Dockerfile -t Risingstar16/pract12:latest
 
         - name: Log in to Docker Hub
           uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
