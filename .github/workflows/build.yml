@@ -11,7 +11,17 @@
         - uses: actions/checkout@v3
         - name: Build Image
           run: docker build . --file Dockerfile -t risingstar16/pract12:latest
-
+      #Tests
+        - name: Run
+          run: docker run -p 7000:7000 -d risingstar16/pract12:latest
+        - name: ist python
+          uses: actions/setup-python@v4
+          with:
+            python-version: '3.9'
+        - name: inst pytest
+          run: pip install pytest requests
+        - name: Run Tests
+          run: pytest
         - name: Log in to Docker Hub
           uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
           with:
